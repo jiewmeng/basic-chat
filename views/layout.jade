@@ -1,0 +1,19 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+	body
+		block content
+
+
+		footer
+			hr
+			
+			if !auth.user
+				p 
+					em not logged in
+			else
+				p 
+					em logged in as #{auth.user.name} 
+						a(href="/auth/logout")

@@ -1,0 +1,19 @@
+extends layout
+
+block content
+	h1 Chatroom
+
+	ul#chats
+
+
+	form#frmPostChat
+		input#txtPostChat(type="text")
+
+	script.
+		var app = {
+			user: !{auth.user ? JSON.stringify(auth.user) : "{}"}
+		};
+
+	script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
+	script(src="http://cdn.pubnub.com/pubnub-3.7.1.min.js")
+	script(src="/javascripts/chat.js")
