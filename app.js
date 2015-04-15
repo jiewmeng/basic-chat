@@ -7,9 +7,7 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 var FbStrategy = require('passport-facebook').Strategy;
 var mongoose = require('mongoose');
-var process = require('process');
-
-mongoose.connect(process.env.MONGOLAB_URI ? process.env.MONGOLAB_URI : 'mongodb://localhost/express-chat');
+mongoose.connect('mongodb://localhost/express-chat');
 var models = require('./models');
 var User = models.User;
 var session = require('express-session');
